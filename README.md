@@ -5,7 +5,7 @@
 ## Features
 
 -   Written with [Kotlin](https://kotlinlang.org/).
--   Uses [NMS](https://www.spigotmc.org/wiki/general-introduction-of-packets-nms/) for compatibility with multiple MC versions.
+-   Uses [NMS](https://riptutorial.com/bukkit/topic/9576/nms) for compatibility with multiple MC versions.
 -   Organized with [Maven](https://maven.apache.org/) submodules.
--   Compatible with CraftBukkit, Spigot, and Paper servers.
+-   Compatible with [CraftBukkit](https://getbukkit.org/download/craftbukkit), [Spigot](https://www.spigotmc.org/), and [Paper](https://papermc.io/) servers.
 -   Basic command structure.
