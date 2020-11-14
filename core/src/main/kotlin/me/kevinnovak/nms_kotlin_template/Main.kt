@@ -18,6 +18,7 @@ class Main : JavaPlugin(), Listener {
         Logger.info("Starting plugin...")
 
         // Determine version
+        Logger.info("Determining NMS version...")
         var version: String?
         try {
             version = this.server.javaClass.`package`.name.split(".")[3]
@@ -35,6 +36,11 @@ class Main : JavaPlugin(), Listener {
             this.disable()
             return
         }
+
+        Logger.info("Loading config files...")
+        // TODO: Why does this return Unit?
+        // TODO: Use config
+        val config = Config(this, "config.yml", "config.yml").load()
 
         // Dependency injection
         var helpCommand = HelpCommand()
