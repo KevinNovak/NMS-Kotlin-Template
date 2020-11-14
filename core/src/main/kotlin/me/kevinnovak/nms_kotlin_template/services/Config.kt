@@ -20,7 +20,7 @@ class Config(private var plugin: JavaPlugin, var resourcePath: String, var dataP
         this.config = YamlConfiguration.loadConfiguration(this.file)
     }
 
-    public fun save() {
+    fun save() {
         this.config.save(this.file)
     }
 
