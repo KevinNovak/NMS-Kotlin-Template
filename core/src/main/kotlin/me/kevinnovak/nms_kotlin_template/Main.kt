@@ -8,13 +8,16 @@ import org.bukkit.command.CommandSender
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
-class Main : JavaPlugin(), Listener {
-    // Dependency injection
-    private var helpCommand = HelpCommand()
-    private var testCommand = TestCommand()
-    private var commandHandler: CommandHandler = CommandHandler("test", helpCommand, arrayOf(testCommand))
-
+class Main : JavaPlugin, Listener {
+    private var commandHandler: CommandHandler
     private lateinit var versionService: VersionService
+
+    constructor() : super() {
+        // Dependency injection
+        var helpCommand = HelpCommand()
+        var testCommand = TestCommand()
+        commandHandler = CommandHandler("test", helpCommand, arrayOf(testCommand))
+    }
 
     override fun onEnable() {
         Logger.info("Starting plugin...")
@@ -24,7 +27,7 @@ class Main : JavaPlugin(), Listener {
             version = this.server.javaClass.`package`.name.split(".")[3]
         } catch (ex: Exception) {
             Logger.error("Could not determine NMS version.", ex)
-            this.stop()
+            this.disable()
             return
         }
 
@@ -33,7 +36,7 @@ class Main : JavaPlugin(), Listener {
             Logger.info("Using NMS version \"$version\".")
         } catch (ex: Exception) {
             Logger.warn("Could not find an implementation for NMS version \"$version\".")
-            this.stop()
+            this.disable()
             return
         }
 
@@ -48,7 +51,7 @@ class Main : JavaPlugin(), Listener {
         return this.commandHandler.process(sender, cmd, commandLabel, args)
     }
 
-    private fun stop() {
+    private fun disable() {
         this.server.pluginManager.disablePlugin(this)
     }
 }
