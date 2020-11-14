@@ -8,20 +8,16 @@ import org.bukkit.command.CommandSender
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
-class Main : JavaPlugin, Listener {
-    private var commandHandler: CommandHandler
+class Main : JavaPlugin(), Listener {
+    private lateinit var commandHandler: CommandHandler
     private lateinit var versionService: VersionService
 
-    constructor() : super() {
-        // Dependency injection
-        var helpCommand = HelpCommand()
-        var testCommand = TestCommand()
-        commandHandler = CommandHandler("test", helpCommand, arrayOf(testCommand))
-    }
+    private var ready: Boolean = false
 
     override fun onEnable() {
         Logger.info("Starting plugin...")
 
+        // Determine version
         var version: String?
         try {
             version = this.server.javaClass.`package`.name.split(".")[3]
@@ -40,6 +36,13 @@ class Main : JavaPlugin, Listener {
             return
         }
 
+        // Dependency injection
+        var helpCommand = HelpCommand()
+        var testCommand = TestCommand(this.versionService)
+        commandHandler = CommandHandler("test", helpCommand, arrayOf(testCommand))
+
+        this.ready = true
+
         Logger.info("Plugin started.")
     }
 
@@ -48,6 +51,10 @@ class Main : JavaPlugin, Listener {
     }
 
     override fun onCommand(sender: CommandSender, cmd: Command, commandLabel: String, args: Array<String>): Boolean {
+        if (!this.ready) {
+            return true
+        }
+
         return this.commandHandler.process(sender, cmd, commandLabel, args)
     }
 
