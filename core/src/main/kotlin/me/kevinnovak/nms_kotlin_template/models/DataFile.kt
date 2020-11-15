@@ -6,12 +6,16 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 
-class Config(private var plugin: JavaPlugin, var resourcePath: String, var dataPath: String) {
+class DataFile(private var plugin: JavaPlugin, var resourcePath: String, var dataPath: String) {
     private var file: File = Paths.get(this.plugin.dataFolder.absolutePath, dataPath).toFile()
     private var config: YamlConfiguration = YamlConfiguration()
 
+    fun exists(): Boolean {
+        return this.file.exists()
+    }
+
     fun load() {
-        if (!this.file.exists()) {
+        if (!this.exists()) {
             this.file.parentFile.mkdirs()
             var stream = this.plugin.getResource(resourcePath)
             Files.copy(stream, this.file.toPath())

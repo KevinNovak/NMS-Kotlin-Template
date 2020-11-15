@@ -2,7 +2,7 @@ package me.kevinnovak.nms_kotlin_template
 
 import me.kevinnovak.nms_kotlin_template.commands.*
 import me.kevinnovak.nms_kotlin_template.events.*
-import me.kevinnovak.nms_kotlin_template.models.Config
+import me.kevinnovak.nms_kotlin_template.models.DataFile
 import me.kevinnovak.nms_kotlin_template.services.*
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
@@ -18,8 +18,8 @@ class Main : JavaPlugin(), Listener {
     override fun onEnable() {
         Logger.info("Starting plugin...")
 
-        Logger.info("Loading config files...")
-        var config = Config(this, "config.yml", "config.yml")
+        Logger.info("Loading files...")
+        var config = DataFile(this, "config.yml", "config.yml")
         config.load()
 
         // Determine version
