@@ -1,13 +1,16 @@
 package me.kevinnovak.nms_kotlin_template
 
 import me.kevinnovak.nms_kotlin_template.commands.*
-import me.kevinnovak.nms_kotlin_template.events.*
+import me.kevinnovak.nms_kotlin_template.events.CommandHandler
 import me.kevinnovak.nms_kotlin_template.models.DataFile
-import me.kevinnovak.nms_kotlin_template.services.*
+import me.kevinnovak.nms_kotlin_template.services.Logger
+import me.kevinnovak.nms_kotlin_template.services.VersionService
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
+
+const val PREFIX = "test"
 
 class Main : JavaPlugin(), Listener {
     private lateinit var commandHandler: CommandHandler
@@ -49,7 +52,7 @@ class Main : JavaPlugin(), Listener {
         // Dependency injection
         var helpCommand = HelpCommand()
         var testCommand = TestCommand(this.versionService)
-        commandHandler = CommandHandler("test", helpCommand, arrayOf(testCommand))
+        commandHandler = CommandHandler(PREFIX, helpCommand, arrayOf(testCommand))
 
         this.ready = true
 
