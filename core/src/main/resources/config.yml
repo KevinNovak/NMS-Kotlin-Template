@@ -1,0 +1,4 @@
+# Forces the plugin to use the specified NMS version
+force-nms-version:
+  enabled: false
+  version: "v1_16_R3"
