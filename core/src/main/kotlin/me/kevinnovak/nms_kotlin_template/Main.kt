@@ -2,6 +2,7 @@ package me.kevinnovak.nms_kotlin_template
 
 import me.kevinnovak.nms_kotlin_template.commands.*
 import me.kevinnovak.nms_kotlin_template.events.*
+import me.kevinnovak.nms_kotlin_template.models.Config
 import me.kevinnovak.nms_kotlin_template.services.*
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
