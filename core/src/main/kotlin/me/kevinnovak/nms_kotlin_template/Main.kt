@@ -17,15 +17,23 @@ class Main : JavaPlugin(), Listener {
     override fun onEnable() {
         Logger.info("Starting plugin...")
 
+        Logger.info("Loading config files...")
+        var config = Config(this, "config.yml", "config.yml")
+        config.load()
+
         // Determine version
-        Logger.info("Determining NMS version...")
         var version: String?
-        try {
-            version = this.server.javaClass.`package`.name.split(".")[3]
-        } catch (ex: Exception) {
-            Logger.error("Could not determine NMS version.", ex)
-            this.disable()
-            return
+        if (config.getBoolean("force-nms-version.enabled")!!) {
+            version = config.getString("force-nms-version.version")
+        } else {
+            Logger.info("Determining NMS version...")
+            try {
+                version = this.server.javaClass.`package`.name.split(".")[3]
+            } catch (ex: Exception) {
+                Logger.error("Could not determine NMS version.", ex)
+                this.disable()
+                return
+            }
         }
 
         try {
@@ -36,11 +44,6 @@ class Main : JavaPlugin(), Listener {
             this.disable()
             return
         }
-
-        Logger.info("Loading config files...")
-        // TODO: Why does this return Unit?
-        // TODO: Use config
-        val config = Config(this, "config.yml", "config.yml").load()
 
         // Dependency injection
         var helpCommand = HelpCommand()
