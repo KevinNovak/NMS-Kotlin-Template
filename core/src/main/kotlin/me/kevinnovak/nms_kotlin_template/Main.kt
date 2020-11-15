@@ -1,16 +1,19 @@
 package me.kevinnovak.nms_kotlin_template
 
-import me.kevinnovak.nms_kotlin_template.commands.*
+import me.kevinnovak.nms_kotlin_template.commands.HelpCommand
+import me.kevinnovak.nms_kotlin_template.commands.TestCommand
 import me.kevinnovak.nms_kotlin_template.events.CommandHandler
 import me.kevinnovak.nms_kotlin_template.models.DataFile
 import me.kevinnovak.nms_kotlin_template.services.Logger
 import me.kevinnovak.nms_kotlin_template.services.VersionService
+import org.bstats.bukkit.MetricsLite
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
 
 const val PREFIX = "test"
+const val METRICS_PLUGIN_ID = 1
 
 class Main : JavaPlugin(), Listener {
     private lateinit var commandHandler: CommandHandler
@@ -53,6 +56,11 @@ class Main : JavaPlugin(), Listener {
         var helpCommand = HelpCommand()
         var testCommand = TestCommand(this.versionService)
         commandHandler = CommandHandler(PREFIX, helpCommand, arrayOf(testCommand))
+
+        if (config.getBoolean("metrics")!!) {
+            Logger.info("Enabling metrics...")
+            MetricsLite(this, METRICS_PLUGIN_ID)
+        }
 
         this.ready = true
 
