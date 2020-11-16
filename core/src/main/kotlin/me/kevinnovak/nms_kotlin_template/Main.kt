@@ -53,18 +53,18 @@ class Main : JavaPlugin(), Listener {
         }
 
         // Dependency injection
-        var helpCommand = HelpCommand()
         var testCommand = TestCommand(this.versionService)
-        commandHandler = CommandHandler(PREFIX, helpCommand, arrayOf(testCommand))
+        var commands = listOf(testCommand)
+        var helpCommand = HelpCommand(commands)
+        commandHandler = CommandHandler(PREFIX, helpCommand, listOf(testCommand))
 
         if (config.getBoolean("metrics")!!) {
             Logger.info("Enabling metrics...")
             MetricsLite(this, METRICS_PLUGIN_ID)
         }
 
-        this.ready = true
-
         Logger.info("Plugin started.")
+        this.ready = true
     }
 
     override fun onDisable() {

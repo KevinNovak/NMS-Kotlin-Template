@@ -4,6 +4,8 @@ import org.bukkit.entity.Player
 
 interface Command {
     var name: String
-    var aliases: Array<String>
+    var aliases: List<String>
+    var usage: String
+    var description: String
     fun execute(player: Player, args: Array<String>)
 }
