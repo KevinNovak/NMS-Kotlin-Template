@@ -7,7 +7,7 @@
 -   Written with [Kotlin](https://kotlinlang.org/).
 -   Uses [NMS](https://riptutorial.com/bukkit/topic/9576/nms) for compatibility with multiple MC versions.
 -   Organized with [Maven](https://maven.apache.org/) submodules.
--   Compatible with [CraftBukkit](https://getbukkit.org/download/craftbukkit), [Spigot](https://www.spigotmc.org/), and [Paper](https://papermc.io/) servers.
+-   Compatible with [Spigot](https://www.spigotmc.org/) and [Paper](https://papermc.io/) servers.
 -   Support for plugin metrics with [bStats](https://bstats.org/)
 -   Basic command structure.
 
