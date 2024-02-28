@@ -6,7 +6,7 @@ import me.kevinnovak.nms_kotlin_template.events.CommandHandler
 import me.kevinnovak.nms_kotlin_template.models.DataFile
 import me.kevinnovak.nms_kotlin_template.services.Logger
 import me.kevinnovak.nms_kotlin_template.services.VersionService
-import org.bstats.bukkit.MetricsLite
+import org.bstats.bukkit.Metrics
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.event.Listener
@@ -60,7 +60,7 @@ class Main : JavaPlugin(), Listener {
 
         if (config.getBoolean("metrics")!!) {
             Logger.info("Enabling metrics...")
-            MetricsLite(this, METRICS_PLUGIN_ID)
+            Metrics(this, METRICS_PLUGIN_ID)
         }
 
         Logger.info("Plugin started.")
