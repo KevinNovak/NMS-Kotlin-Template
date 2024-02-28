@@ -47,8 +47,8 @@
     <dependencies>
         <dependency>
             <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit-lite</artifactId>
-            <version>1.7</version>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.0.2</version>
         </dependency>
         <dependency>
             <groupId>me.kevinnovak.nms-kotlin-template</groupId>
