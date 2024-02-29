@@ -31,16 +31,9 @@
         </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <artifactId>spigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>local.spigot.nms</groupId>
-            <artifactId>AllSpigotNMS</artifactId>
-            <version>LATEST</version>
-            <scope>system</scope>
-            <systemPath>D:/Repos/Me/Minecraft/NMS-Kotlin-Template/versions/all-spigot-nms.jar</systemPath>
         </dependency>
     </dependencies>
 
