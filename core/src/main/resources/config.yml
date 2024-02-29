@@ -4,4 +4,4 @@ metrics: true
 # Forces the plugin to use the specified NMS version
 force-nms-version:
   enabled: false
-  version: "v1_16_R3"
+  version: "v1_20_R3"
