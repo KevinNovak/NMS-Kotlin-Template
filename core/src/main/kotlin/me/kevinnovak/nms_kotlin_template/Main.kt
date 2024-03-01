@@ -44,7 +44,9 @@ class Main : JavaPlugin(), Listener {
         }
 
         try {
-            this.versionService = Class.forName("${VersionService::class.qualifiedName}_$version").getDeclaredConstructor().newInstance() as VersionService
+            this.versionService =
+                Class.forName("${VersionService::class.qualifiedName}_$version").getDeclaredConstructor()
+                    .newInstance() as VersionService
             Logger.info("Using NMS version \"$version\".")
         } catch (ex: Exception) {
             Logger.warn("Could not find an implementation for NMS version \"$version\".")

@@ -3,7 +3,6 @@ package me.kevinnovak.nms_kotlin_template.models
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
-import java.io.FileNotFoundException
 import java.nio.file.Files
 import java.nio.file.Paths
 

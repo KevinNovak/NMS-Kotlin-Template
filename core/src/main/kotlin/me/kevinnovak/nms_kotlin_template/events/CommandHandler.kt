@@ -1,11 +1,15 @@
 package me.kevinnovak.nms_kotlin_template.events
 
 import me.kevinnovak.nms_kotlin_template.commands.Command
-import org.bukkit.command.Command as BukkitCommand
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
+import org.bukkit.command.Command as BukkitCommand
 
-class CommandHandler(private var prefix: String, private var helpCommand: Command, private var commands: List<Command>) {
+class CommandHandler(
+    private var prefix: String,
+    private var helpCommand: Command,
+    private var commands: List<Command>
+) {
 
     fun process(sender: CommandSender, cmd: BukkitCommand, args: Array<String>) {
         if (sender !is Player) {

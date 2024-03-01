@@ -1,7 +1,6 @@
 package me.kevinnovak.nms_kotlin_template.services
 
 import org.bukkit.Bukkit
-import java.lang.Exception
 
 const val PLUGIN_NAME = "NmsKotlinTutorial"
 
