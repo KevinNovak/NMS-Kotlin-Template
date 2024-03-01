@@ -12,7 +12,7 @@ class CommandHandler(private var prefix: String, private var helpCommand: Comman
             return true
         }
 
-        if (cmd.name.toLowerCase() != this.prefix) {
+        if (cmd.name.lowercase() != this.prefix) {
             return true
         }
 
@@ -35,7 +35,7 @@ class CommandHandler(private var prefix: String, private var helpCommand: Comman
     }
 
     private fun findCommand(input: String): Command? {
-        var commandName = input.toLowerCase()
+        var commandName = input.lowercase()
         for (command in this.commands) {
             if (command.name == commandName) {
                 return command
