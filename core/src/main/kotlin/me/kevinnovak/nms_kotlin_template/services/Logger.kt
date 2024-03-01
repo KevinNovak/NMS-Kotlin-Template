@@ -2,7 +2,7 @@ package me.kevinnovak.nms_kotlin_template.services
 
 import org.bukkit.Bukkit
 
-const val PLUGIN_NAME = "NmsKotlinTutorial"
+const val PLUGIN_NAME = "NmsKotlinTemplate"
 
 class Logger {
     companion object {
