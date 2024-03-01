@@ -3,6 +3,7 @@ package me.kevinnovak.nms_kotlin_template.models
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
+import java.io.FileNotFoundException
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -17,9 +18,9 @@ class DataFile(private var plugin: JavaPlugin, var resourcePath: String, var dat
     fun load() {
         if (!this.exists()) {
             this.file.parentFile.mkdirs()
-            var stream = this.plugin.getResource(resourcePath)
+            val stream = this.plugin.getResource(resourcePath)!!
             Files.copy(stream, this.file.toPath())
-            stream?.close()
+            stream.close()
         }
         this.config = YamlConfiguration.loadConfiguration(this.file)
     }
@@ -39,7 +40,7 @@ class DataFile(private var plugin: JavaPlugin, var resourcePath: String, var dat
         }
     }
 
-    fun getStringList(path: String): List<String>? {
+    fun getStringList(path: String): List<String> {
         return this.config.getStringList(path)
     }
 
@@ -50,7 +51,7 @@ class DataFile(private var plugin: JavaPlugin, var resourcePath: String, var dat
         }
     }
 
-    fun getInt(path: String): Int? {
+    fun getInt(path: String): Int {
         return this.config.getInt(path)
     }
 
@@ -61,7 +62,7 @@ class DataFile(private var plugin: JavaPlugin, var resourcePath: String, var dat
         }
     }
 
-    fun getDouble(path: String): Double? {
+    fun getDouble(path: String): Double {
         return this.config.getDouble(path)
     }
 
@@ -72,7 +73,7 @@ class DataFile(private var plugin: JavaPlugin, var resourcePath: String, var dat
         }
     }
 
-    fun getBoolean(path: String): Boolean? {
+    fun getBoolean(path: String): Boolean {
         return this.config.getBoolean(path)
     }
 

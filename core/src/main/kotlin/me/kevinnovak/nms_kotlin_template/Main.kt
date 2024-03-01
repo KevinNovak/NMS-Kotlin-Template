@@ -25,12 +25,12 @@ class Main : JavaPlugin(), Listener {
         Logger.info("Starting plugin...")
 
         Logger.info("Loading files...")
-        var config = DataFile(this, "config.yml", "config.yml")
+        val config = DataFile(this, "config.yml", "config.yml")
         config.load()
 
         // Determine version
-        var version: String?
-        if (config.getBoolean("force-nms-version.enabled")!!) {
+        val version: String?
+        if (config.getBoolean("force-nms-version.enabled")) {
             version = config.getString("force-nms-version.version")
         } else {
             Logger.info("Determining NMS version...")
@@ -53,12 +53,12 @@ class Main : JavaPlugin(), Listener {
         }
 
         // Dependency injection
-        var testCommand = TestCommand(this.versionService)
-        var commands = listOf(testCommand)
-        var helpCommand = HelpCommand(commands)
+        val testCommand = TestCommand(this.versionService)
+        val commands = listOf(testCommand)
+        val helpCommand = HelpCommand(commands)
         commandHandler = CommandHandler(PREFIX, helpCommand, listOf(testCommand))
 
-        if (config.getBoolean("metrics")!!) {
+        if (config.getBoolean("metrics")) {
             Logger.info("Enabling metrics...")
             Metrics(this, METRICS_PLUGIN_ID)
         }
@@ -76,7 +76,8 @@ class Main : JavaPlugin(), Listener {
             return true
         }
 
-        return this.commandHandler.process(sender, cmd, args)
+        this.commandHandler.process(sender, cmd, args)
+        return true;
     }
 
     private fun disable() {

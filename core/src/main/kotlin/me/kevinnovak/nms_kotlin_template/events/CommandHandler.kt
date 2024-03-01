@@ -7,35 +7,35 @@ import org.bukkit.entity.Player
 
 class CommandHandler(private var prefix: String, private var helpCommand: Command, private var commands: List<Command>) {
 
-    fun process(sender: CommandSender, cmd: BukkitCommand, args: Array<String>): Boolean {
+    fun process(sender: CommandSender, cmd: BukkitCommand, args: Array<String>) {
         if (sender !is Player) {
-            return true
+            return
         }
 
         if (cmd.name.lowercase() != this.prefix) {
-            return true
+            return
         }
 
         if (args.isEmpty()) {
             this.helpCommand.execute(sender, args)
-            return true
+            return
         }
 
-        var userCommand = args[0]
-        var command = this.findCommand(userCommand)
+        val userCommand = args[0]
+        val command = this.findCommand(userCommand)
 
         if (command == null) {
             this.helpCommand.execute(sender, args)
-            return true
+            return
         }
 
         // TODO: Logs
         command.execute(sender, args)
-        return true
+        return
     }
 
     private fun findCommand(input: String): Command? {
-        var commandName = input.lowercase()
+        val commandName = input.lowercase()
         for (command in this.commands) {
             if (command.name == commandName) {
                 return command

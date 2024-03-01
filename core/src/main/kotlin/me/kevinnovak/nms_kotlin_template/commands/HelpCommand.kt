@@ -10,14 +10,14 @@ class HelpCommand(private var commands: List<Command>) : Command {
     override var description: String = "Shows plugin help."
 
     override fun execute(player: Player, args: Array<String>) {
-        var lines = mutableListOf("&e-------- &6NMS Kotlin Template &e- &6Commands &e--------")
+        val lines = mutableListOf("&e-------- &6NMS Kotlin Template &e- &6Commands &e--------")
         lines.add(formatLine(this))
         for (command in this.commands) {
             if (player.hasPermission("nmskotlintemplate.commands.${command.name}")) {
                 lines.add(formatLine(command))
             }
         }
-        var msg = lines.joinToString("\n")
+        val msg = lines.joinToString("\n")
         MessageService.send(player, msg)
     }
 

@@ -6,7 +6,7 @@ import org.bukkit.entity.Player
 class MessageService {
     companion object {
         fun send(player: Player, msg: String) {
-            var coloredMsg = StringUtils.color(msg)
+            val coloredMsg = StringUtils.color(msg)
             player.sendMessage(coloredMsg)
         }
     }
