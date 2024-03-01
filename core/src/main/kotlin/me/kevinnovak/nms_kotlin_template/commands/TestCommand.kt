@@ -5,7 +5,6 @@ import org.bukkit.entity.Player
 
 class TestCommand(private var versionService: VersionService) : Command {
     override var name = "test"
-    override var aliases = listOf("t")
     override var usage: String = "/test test"
     override var description: String = "Runs the test command."
 

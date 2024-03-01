@@ -44,10 +44,6 @@ class CommandHandler(
             if (command.name == commandName) {
                 return command
             }
-
-            if (command.aliases.contains(commandName)) {
-                return command
-            }
         }
         return null
     }

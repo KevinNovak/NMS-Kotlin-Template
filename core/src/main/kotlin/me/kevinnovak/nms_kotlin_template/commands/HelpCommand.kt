@@ -5,7 +5,6 @@ import org.bukkit.entity.Player
 
 class HelpCommand(private var commands: List<Command>) : Command {
     override var name = "help"
-    override var aliases = listOf("?")
     override var usage: String = "/test"
     override var description: String = "Shows plugin help."
 
