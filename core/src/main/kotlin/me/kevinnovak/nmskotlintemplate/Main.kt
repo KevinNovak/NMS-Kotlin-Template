@@ -68,6 +68,7 @@ class Main : JavaPlugin(), Listener {
     }
 
     override fun onDisable() {
+        this.ready = false
         Logger.info("Plugin stopped.")
     }
 
