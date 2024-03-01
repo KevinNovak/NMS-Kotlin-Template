@@ -79,7 +79,7 @@ class Main : JavaPlugin(), Listener {
         }
 
         this.commandHandler.process(sender, cmd, args)
-        return true;
+        return true
     }
 
     private fun disable() {
