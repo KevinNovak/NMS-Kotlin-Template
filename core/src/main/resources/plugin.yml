@@ -1,9 +1,9 @@
 name: NmsKotlinTemplate
 main: me.kevinnovak.nmskotlintemplate.Main
 version: 1.0.0
-authors: [KevinNovak]
+authors: [ KevinNovak ]
 api-version: 1.13
 commands:
   test:
     usage: /<command>
-    description: Test command.
+    description: Runs the test command.
