@@ -1,6 +1,6 @@
-package me.kevinnovak.nms_kotlin_template.events
+package me.kevinnovak.nmskotlintemplate.events
 
-import me.kevinnovak.nms_kotlin_template.commands.Command
+import me.kevinnovak.nmskotlintemplate.commands.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.bukkit.command.Command as BukkitCommand

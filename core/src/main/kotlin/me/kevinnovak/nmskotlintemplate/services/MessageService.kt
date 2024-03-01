@@ -1,6 +1,6 @@
-package me.kevinnovak.nms_kotlin_template.services
+package me.kevinnovak.nmskotlintemplate.services
 
-import me.kevinnovak.nms_kotlin_template.utils.StringUtils
+import me.kevinnovak.nmskotlintemplate.utils.StringUtils
 import org.bukkit.entity.Player
 
 class MessageService {

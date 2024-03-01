@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.services
+package me.kevinnovak.nmskotlintemplate.services
 
 import org.bukkit.entity.Player
 

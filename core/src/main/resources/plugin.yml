@@ -1,5 +1,5 @@
 name: NmsKotlinTemplate
-main: me.kevinnovak.nms_kotlin_template.Main
+main: me.kevinnovak.nmskotlintemplate.Main
 version: 1.0.0
 authors: [KevinNovak]
 api-version: 1.13

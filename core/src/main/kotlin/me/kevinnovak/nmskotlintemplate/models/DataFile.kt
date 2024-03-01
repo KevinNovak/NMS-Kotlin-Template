@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.models
+package me.kevinnovak.nmskotlintemplate.models
 
 import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin

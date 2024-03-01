@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.utils
+package me.kevinnovak.nmskotlintemplate.utils
 
 import org.bukkit.ChatColor
 

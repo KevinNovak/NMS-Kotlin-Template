@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.services
+package me.kevinnovak.nmskotlintemplate.services
 
 import net.md_5.bungee.api.ChatMessageType
 import net.md_5.bungee.api.chat.TextComponent

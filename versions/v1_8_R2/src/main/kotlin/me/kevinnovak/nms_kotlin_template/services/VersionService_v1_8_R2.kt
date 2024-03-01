@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.services
+package me.kevinnovak.nmskotlintemplate.services
 
 import net.minecraft.server.v1_8_R2.IChatBaseComponent
 import net.minecraft.server.v1_8_R2.PacketPlayOutChat

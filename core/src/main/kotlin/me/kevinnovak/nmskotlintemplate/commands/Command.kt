@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.commands
+package me.kevinnovak.nmskotlintemplate.commands
 
 import org.bukkit.entity.Player
 

@@ -1,6 +1,6 @@
-package me.kevinnovak.nms_kotlin_template.commands
+package me.kevinnovak.nmskotlintemplate.commands
 
-import me.kevinnovak.nms_kotlin_template.services.VersionService
+import me.kevinnovak.nmskotlintemplate.services.VersionService
 import org.bukkit.entity.Player
 
 class TestCommand(private var versionService: VersionService) : Command {

@@ -1,11 +1,11 @@
-package me.kevinnovak.nms_kotlin_template
+package me.kevinnovak.nmskotlintemplate
 
-import me.kevinnovak.nms_kotlin_template.commands.HelpCommand
-import me.kevinnovak.nms_kotlin_template.commands.TestCommand
-import me.kevinnovak.nms_kotlin_template.events.CommandHandler
-import me.kevinnovak.nms_kotlin_template.models.DataFile
-import me.kevinnovak.nms_kotlin_template.services.Logger
-import me.kevinnovak.nms_kotlin_template.services.VersionService
+import me.kevinnovak.nmskotlintemplate.commands.HelpCommand
+import me.kevinnovak.nmskotlintemplate.commands.TestCommand
+import me.kevinnovak.nmskotlintemplate.events.CommandHandler
+import me.kevinnovak.nmskotlintemplate.models.DataFile
+import me.kevinnovak.nmskotlintemplate.services.Logger
+import me.kevinnovak.nmskotlintemplate.services.VersionService
 import org.bstats.bukkit.Metrics
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender

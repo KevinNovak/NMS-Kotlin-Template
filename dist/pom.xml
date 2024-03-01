@@ -28,7 +28,7 @@
                     <relocations>
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <shadedPattern>me.kevinnovak.nms_kotlin_template</shadedPattern>
+                            <shadedPattern>me.kevinnovak.nmskotlintemplate</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>

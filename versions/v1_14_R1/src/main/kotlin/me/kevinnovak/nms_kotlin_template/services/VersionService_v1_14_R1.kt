@@ -1,4 +1,4 @@
-package me.kevinnovak.nms_kotlin_template.services
+package me.kevinnovak.nmskotlintemplate.services
 
 import net.minecraft.server.v1_14_R1.ChatMessageType
 import net.minecraft.server.v1_14_R1.IChatBaseComponent

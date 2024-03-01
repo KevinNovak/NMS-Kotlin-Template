@@ -1,6 +1,6 @@
-package me.kevinnovak.nms_kotlin_template.commands
+package me.kevinnovak.nmskotlintemplate.commands
 
-import me.kevinnovak.nms_kotlin_template.services.MessageService
+import me.kevinnovak.nmskotlintemplate.services.MessageService
 import org.bukkit.entity.Player
 
 class HelpCommand(private var commands: List<Command>) : Command {
