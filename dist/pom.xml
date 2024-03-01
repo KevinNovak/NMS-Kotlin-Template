@@ -23,7 +23,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.5.2</version>
                 <configuration>
                     <relocations>
                         <relocation>
@@ -31,6 +31,14 @@
                             <shadedPattern>me.kevinnovak.nms_kotlin_template</shadedPattern>
                         </relocation>
                     </relocations>
+                    <filters>
+                        <filter>
+                            <artifact>*</artifact>
+                            <excludes>
+                                <exclude>META-INF/*.MF</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
                 </configuration>
                 <executions>
                     <execution>
@@ -44,18 +52,11 @@
         </plugins>
     </build>
 
-    <repositories>
-        <repository>
-            <id>CodeMC</id>
-            <url>https://repo.codemc.org/repository/maven-public</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit-lite</artifactId>
-            <version>1.7</version>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.0.2</version>
         </dependency>
         <dependency>
             <groupId>me.kevinnovak.nms-kotlin-template</groupId>
@@ -135,6 +136,51 @@
         <dependency>
             <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
             <artifactId>v1_16_R3</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_17_R1</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_18_R1</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_18_R2</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_19_R1</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_19_R2</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_19_R3</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_20_R1</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_20_R2</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>me.kevinnovak.nms-kotlin-template.versions</groupId>
+            <artifactId>v1_20_R3</artifactId>
             <version>${revision}</version>
         </dependency>
     </dependencies>

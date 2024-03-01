@@ -7,12 +7,12 @@ import org.bukkit.entity.Player
 
 class CommandHandler(private var prefix: String, private var helpCommand: Command, private var commands: List<Command>) {
 
-    fun process(sender: CommandSender, cmd: BukkitCommand, commandLabel: String, args: Array<String>): Boolean {
+    fun process(sender: CommandSender, cmd: BukkitCommand, args: Array<String>): Boolean {
         if (sender !is Player) {
             return true
         }
 
-        if (cmd.name.toLowerCase() != this.prefix) {
+        if (cmd.name.lowercase() != this.prefix) {
             return true
         }
 
@@ -35,7 +35,7 @@ class CommandHandler(private var prefix: String, private var helpCommand: Comman
     }
 
     private fun findCommand(input: String): Command? {
-        var commandName = input.toLowerCase()
+        var commandName = input.lowercase()
         for (command in this.commands) {
             if (command.name == commandName) {
                 return command
