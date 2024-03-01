@@ -2,6 +2,7 @@ package me.kevinnovak.nmskotlintemplate
 
 import me.kevinnovak.nmskotlintemplate.commands.HelpCommand
 import me.kevinnovak.nmskotlintemplate.commands.TestCommand
+import me.kevinnovak.nmskotlintemplate.constants.Constants
 import me.kevinnovak.nmskotlintemplate.events.CommandHandler
 import me.kevinnovak.nmskotlintemplate.models.DataFile
 import me.kevinnovak.nmskotlintemplate.services.Logger
@@ -11,9 +12,6 @@ import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
 import org.bukkit.event.Listener
 import org.bukkit.plugin.java.JavaPlugin
-
-const val PREFIX = "test"
-const val METRICS_PLUGIN_ID = 1
 
 class Main : JavaPlugin(), Listener {
     private lateinit var commandHandler: CommandHandler
@@ -58,11 +56,11 @@ class Main : JavaPlugin(), Listener {
         val testCommand = TestCommand(this.versionService)
         val commands = listOf(testCommand)
         val helpCommand = HelpCommand(commands)
-        commandHandler = CommandHandler(PREFIX, helpCommand, listOf(testCommand))
+        commandHandler = CommandHandler(helpCommand, listOf(testCommand))
 
         if (config.getBoolean("metrics")) {
             Logger.info("Enabling metrics...")
-            Metrics(this, METRICS_PLUGIN_ID)
+            Metrics(this, Constants.BSTATS_PLUGIN_ID)
         }
 
         Logger.info("Plugin started.")

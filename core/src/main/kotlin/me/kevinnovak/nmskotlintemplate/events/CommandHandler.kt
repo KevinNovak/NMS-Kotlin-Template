@@ -1,12 +1,12 @@
 package me.kevinnovak.nmskotlintemplate.events
 
 import me.kevinnovak.nmskotlintemplate.commands.Command
+import me.kevinnovak.nmskotlintemplate.constants.Constants
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
 import org.bukkit.command.Command as BukkitCommand
 
 class CommandHandler(
-    private var prefix: String,
     private var helpCommand: Command,
     private var commands: List<Command>
 ) {
@@ -16,7 +16,7 @@ class CommandHandler(
             return
         }
 
-        if (cmd.name.lowercase() != this.prefix) {
+        if (cmd.name.lowercase() != Constants.COMMAND_PREFIX) {
             return
         }
 
