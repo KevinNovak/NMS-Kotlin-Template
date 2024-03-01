@@ -76,7 +76,7 @@ class Main : JavaPlugin(), Listener {
             return true
         }
 
-        return this.commandHandler.process(sender, cmd, commandLabel, args)
+        return this.commandHandler.process(sender, cmd, args)
     }
 
     private fun disable() {

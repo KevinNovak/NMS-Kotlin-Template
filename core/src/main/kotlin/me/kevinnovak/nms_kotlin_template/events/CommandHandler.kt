@@ -7,7 +7,7 @@ import org.bukkit.entity.Player
 
 class CommandHandler(private var prefix: String, private var helpCommand: Command, private var commands: List<Command>) {
 
-    fun process(sender: CommandSender, cmd: BukkitCommand, commandLabel: String, args: Array<String>): Boolean {
+    fun process(sender: CommandSender, cmd: BukkitCommand, args: Array<String>): Boolean {
         if (sender !is Player) {
             return true
         }
